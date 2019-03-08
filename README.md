@@ -21,50 +21,45 @@ Your solution should be a full-stack web application for patent document searchi
 - Use JavaScript and any libraries you are comfortable with for the front-end.
 
 ## Functionality
-1. Main Search
+### Main Search
 
-- A search interface where the user can enter keywords.  For example, a user could search for: ultra capacitor
+  - A search interface where the user can enter keywords.  For example, a user could search for: ultra capacitor
 
-2. Results
+### Results
 
 - lists the matching document filenames
-
 - displays thumbnail of the first image
-
 - displays a snippet of text displaying the keywords in context (KWIC) of the text in which they appear.  (The snippet does not need to contain every example of the keyword.)
 
 For example the search for ultra capacitor would display:
+<p align="center">
+  <img src="https://github.com/HarrityLLP/andrey-test/blob/master/2-results.PNG" width="50%">
+</p>
 
-![image of search results](https://github.com/HarrityLLP/andrey-test/blob/master/2-results.PNG)
-
-3. “Document View” with each term highlighted with a different color.
-
+### Document Display
+- Each keyword should be highlighted with a different color.
 - A keyword highlighting box at the top of this page to adjust the keywords that should be highlighted.
-
 - Changing the keywords in the keyword highlighting box should not restart the search, but rather just change what text is highlighted.
-
 - A text area that displays the text of the entire document and highlight every instance of the matching keywords.
-
 - An image area that displays the images of the patent
-
 - Ability to navigate back to the result list.
 
 For example
+<p align="center">
+  <img src="https://github.com/HarrityLLP/andrey-test/blob/master/3-DocumentView.PNG" width="50%">
+</p>
 
-![sample document view](https://github.com/HarrityLLP/andrey-test/blob/master/3-DocumentView.PNG)
+The example images above are merely one way that the interface could look.  Feel free to design it differently.
 
-
-* The example images above are merely one way that the interface could look.  Feel free to design it differently.
-
-### What is in this Repo
+## What is in this Repo
 
 The Data folder in this repo has the sample data.
 
-#### Patent Document Text
+### Patent Document Text
 
 Each patent document is represented by a text file.  This should be the basis for the search function.
 
-#### Patent Document Images
+### Patent Document Images
 
 The png files correspond to the patent document text files.  They are correlated by the initial document number.  
 
@@ -75,7 +70,7 @@ For example:
 
 Please clone this repository, create a branch for your code, develop your answer the using the tools of your choice, push your changes back to GitHub, and create a Pull Request to merge your changes into the master branch.  
 
-### Timeline
+## Timeline
 
 Your test answer will be timely if the pull request with all of your commits is created **before** `Friday at 12:00 pm (UTC)`.
 
