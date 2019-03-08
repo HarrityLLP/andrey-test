@@ -72,6 +72,6 @@ Please clone this repository, create a branch for your code, develop your answer
 
 ## Timeline
 
-Your test answer will be timely if the pull request with all of your commits is created **before** `Friday at 12:00 pm (UTC)`.
+Your test answer will be timely if the pull request with all of your commits is created in GitHub **before** Wednesday, March 13 at 2:00 pm (US Eastern Time).
 
 **Good luck!**
