@@ -12,18 +12,18 @@ Your solution should be a full-stack web application for patent document searchi
 
 ## Requirements:
 
-- Single page web application
+- Single page web application.
 
-- Use MongoDB to store the patent documents
+- Use a database to store the patent documents on the server.
 
-- Use NodeJS and npm modules to create the back-end components
+- Use NodeJS and npm modules to create the back-end components.
 
-- Use JavaScript and any libraries you are comfortable with for the front-end.
+- Use JavaScript (or TypeScript) and any frameworks or libraries you are comfortable with for the front-end.
 
 ## Functionality
 ### Main Search
 
-  - A search interface where the user can enter keywords.  For example, a user could search for: ultra capacitor
+- A search interface where the user can enter keywords.  For example, a user could search for: ultra capacitor
 
 ### Results
 
@@ -31,7 +31,7 @@ Your solution should be a full-stack web application for patent document searchi
 - displays thumbnail of the first image
 - displays a snippet of text displaying the keywords in context (KWIC) of the text in which they appear.  (The snippet does not need to contain every example of the keyword.)
 
-For example the search for ultra capacitor would display:
+For example the search for ultra capacitor would display something similar to:
 <p align="center">
   <img src="https://github.com/HarrityLLP/andrey-test/blob/master/2-results.PNG" width="50%">
 </p>
@@ -44,7 +44,7 @@ For example the search for ultra capacitor would display:
 - An image area that displays the images of the patent
 - Ability to navigate back to the result list.
 
-For example
+For example, the document view might look something like:
 <p align="center">
   <img src="https://github.com/HarrityLLP/andrey-test/blob/master/3-DocumentView.PNG" width="50%">
 </p>
@@ -72,6 +72,6 @@ Please clone this repository, create a branch for your code, develop your answer
 
 ## Timeline
 
-Your test answer will be timely if the pull request with all of your commits is created in GitHub **before** Wednesday, March 13 at 2:00 pm (US Eastern Time).
+Your test answer will be timely if the pull request with all of your commits is created in GitHub **before** Wednesday, March 13 at 5:00 pm (US Eastern Time).
 
 **Good luck!**
