@@ -35,7 +35,7 @@ Your solution should be a full-stack web application for patent document searchi
 
 For example the search for ultra capacitor would display:
 
-![image of search results](2-results.png)
+![image of search results](https://github.com/HarrityLLP/andrey-test/blob/master/2-results.PNG)
 
 3. “Document View” with each term highlighted with a different color.
 
@@ -51,7 +51,7 @@ For example the search for ultra capacitor would display:
 
 For example
 
-![sample document view](3-DocumentView.png)
+![sample document view](https://github.com/HarrityLLP/andrey-test/blob/master/3-DocumentView.PNG)
 
 
 * The example images above are merely one way that the interface could look.  Feel free to design it differently.
