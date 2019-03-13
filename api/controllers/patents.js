@@ -15,7 +15,7 @@ router.get(
     }
 
     const entries = query.s.split(',');
-    const $search = entries.join(' ');
+    const $search = entries.map(s => `"${s}"`).join(' ');
     const collection = await db.patents.find({ $text: { $search } }).toArray();
 
     return ok(

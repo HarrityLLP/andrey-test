@@ -95,27 +95,29 @@ describe('patents', () => {
       await db.patents.insertOne({
         title: 'US07249732 - Aerodynamically stable, VTOL aircraft.txt',
         text:
-          'This divisional U.S. Patent Application claims the benefit of the priority filing date of co-pending U.S. patent application Ser. No. 10/763,973, entitled “Ouiet Vertical Take Off & Landing Aircraft Using Ducted, Magnetic-Induction Air-Impeller Rotors”, filed on Jan. 22, 2004, and issuing as U.S. Pat. No. 7,032,861 on Apr. 25, 2006, which was a continuation-in-part of U.S. Design patent application Ser. No. 29/175,100 filed on Jan. 23, 2003, entitled “Ouiet Vertical Take Off & Landing (VTOL) Aircraft”, of the same inventors.',
+          'The ARNMI described herein builds on known technology including, but not limited to, network management of physical robots; automated flight records management; automated flight route and operations management; automated route and hazards mapping; automation of hangars or warehouse logistics management; automated compliance management and rules engines; and algorithms and methods for managing geospatial data in five dimensions.',
         images: ['2.png']
       });
 
-      const response = await request.agent(server).get('/patents?s=described,inventors');
+      const response = await request.agent(server).get('/patents?s=described,technology');
 
       expect(response.statusCode).toEqual(200);
-      expect(response.body).toEqual([
-        {
-          id: expect.anything(),
-          title: 'US09965962 - Aerial robotics network management infrastructure.txt',
-          summary: 'The ARNMI described herein builds on known...',
-          logo: undefined
-        },
-        {
-          id: expect.anything(),
-          title: 'US07249732 - Aerodynamically stable, VTOL aircraft.txt',
-          summary: '...Aircraft”, of the same inventors.',
-          logo: '2.png'
-        }
-      ]);
+      expect(response.body).toEqual(
+        expect.arrayContaining([
+          {
+            id: expect.anything(),
+            title: 'US09965962 - Aerial robotics network management infrastructure.txt',
+            summary: 'The ARNMI described herein builds on known...',
+            logo: undefined
+          },
+          {
+            id: expect.anything(),
+            title: 'US09965962 - Aerial robotics network management infrastructure.txt',
+            summary: 'The ARNMI described herein builds on known...',
+            logo: undefined
+          }
+        ])
+      );
     });
   });
 
