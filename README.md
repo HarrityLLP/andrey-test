@@ -9,6 +9,7 @@ Application consists of:
 - Api built with Node.js/Express.js
 - Frontend build with Vue.js
 
+To seed the database, execute `node seed.js`
 
 ---
 ---
