@@ -18,6 +18,8 @@ router.get(
     const $search = entries.map(s => `"${s}"`).join(' ');
     const collection = await db.patents.find({ $text: { $search } }).toArray();
 
+    const WORDS_TO_INCLUDE = 5;
+
     return ok(
       collection.map(obj => {
         const entry = entries.find(s => obj.text.includes(s));
@@ -28,17 +30,17 @@ router.get(
           title: obj.title,
           logo: obj.images && obj.images.length && obj.images[0],
           summary: [
-            left.split(' ').length > 5 ? '...' : '',
+            left.split(' ').length > WORDS_TO_INCLUDE ? '...' : '',
             left
               .split(' ')
-              .slice(-5)
+              .slice(-WORDS_TO_INCLUDE)
               .join(' '),
             entry,
             right
               .split(' ')
-              .slice(0, 5)
+              .slice(0, WORDS_TO_INCLUDE)
               .join(' '),
-            right.split(' ').length > 5 ? '...' : ''
+            right.split(' ').length > WORDS_TO_INCLUDE ? '...' : ''
           ].join('')
         };
       })
