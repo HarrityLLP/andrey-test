@@ -1,5 +1,20 @@
 # andrey-test
 
+## Results
+
+Use `docker-compose up` to start an application.
+
+Application consists of:
+- MongoDB as a storage
+- Api built with Node.js/Express.js
+- Frontend build with Vue.js
+
+
+---
+---
+
+
+
 ## Introduction
 
 Thank you for your interest in building innovative, enterprise-class patent tools for Harrity & Harrity, LLP.
