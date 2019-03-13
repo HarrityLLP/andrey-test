@@ -44,7 +44,7 @@ export default {
 
       for (let i = 0; i < this.keywords.length; i++) {
         const keyword = this.keywords[i];
-        const index = result.toLowerCase().indexOf(keyword);
+        const index = result.toLowerCase().indexOf(keyword.toLowerCase());
         if (index === -1) {
           continue;
         }
