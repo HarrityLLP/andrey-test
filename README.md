@@ -11,6 +11,8 @@ Application consists of:
 
 To seed the database, execute `node seed.js`
 
+You can access a web app on the http://localhost:8080
+
 ---
 ---
 
