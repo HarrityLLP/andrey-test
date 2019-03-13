@@ -4,7 +4,7 @@
     <div class="back-wrapper">
       <a @click="$router.go(-1)">&lt; Back</a>
     </div>
-    <form @submit.prevent="highlight">
+    <form @submit.prevent>
       <label>Keywords:</label>
       <input type="text" v-model="searchTerm" />
     </form>

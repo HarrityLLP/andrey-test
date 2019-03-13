@@ -7,14 +7,17 @@
       <button :disabled="!isSearchTermValid || isRequestPending">Search</button>
     </form>
 
-    <ul v-if="collection && collection.length">
-      <li v-for="item of collection" :key="item.id">
+    <ul v-if="collection && collection.length" class="search-result-list">
+      <li v-for="item of collection" :key="item.id" class="search-result-list-item">
         <router-link :to="{ path: `/patents/${item.id}`, query: $route.query }">{{ item.title }}</router-link>
 
         <img :src="item.logo" alt="" />
         <highlighted-text :text="item.summary" :keywords="keywords"></highlighted-text>
       </li>
     </ul>
+    <div v-else>
+      <i>Nothing matches a specified search criteria.</i>
+    </div>
   </div>
 </template>
 
@@ -79,7 +82,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .search-wrapper {
   width: 400px;
@@ -96,11 +98,11 @@ form {
   grid-gap: 10px;
   margin-bottom: 25px;
 }
-ul {
+.search-result-list {
   list-style-type: none;
   padding: 0;
 }
-li {
+.search-result-list-item {
   display: grid;
   grid-template-rows: max-content max-content;
   grid-template-columns: 100px 1fr;

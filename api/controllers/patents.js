@@ -22,8 +22,9 @@ router.get(
 
     return ok(
       collection.map(obj => {
-        const entry = entries.find(s => obj.text.includes(s));
-        const [left = '', right = ''] = obj.text.split(entry);
+        const entry = entries.find(s => obj.text.search(new RegExp('\\b' + s + '\\b', 'g') > -1));
+
+        const [left = '', right = ''] = obj.text.split(new RegExp('\\b' + entry + '\\b', 'g'));
 
         return {
           id: obj._id,

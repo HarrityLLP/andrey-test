@@ -44,7 +44,7 @@ export default {
 
       for (let i = 0; i < this.keywords.length; i++) {
         const keyword = this.keywords[i];
-        const index = result.toLowerCase().indexOf(keyword.toLowerCase());
+        const index = result.toLowerCase().search(new RegExp('\\b' + keyword.toLowerCase() + '\\b'));
         if (index === -1) {
           continue;
         }
