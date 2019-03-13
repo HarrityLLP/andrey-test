@@ -31,7 +31,7 @@ export default {
     async getCollection({ commit }, { keywords }) {
       commit(GET_PATENT_COLLECTION_STARTED);
       try {
-        const collection = await httpClient.get(`http://localhost:3000/patents?s=${keywords.join(',')}`);
+        const collection = await httpClient.get(`${process.env.VUE_APP_API_URL}/patents?s=${keywords.join(',')}`);
         commit(GET_PATENT_COLLECTION_COMPLETED, collection);
       } catch (e) {
         logger.error(e);

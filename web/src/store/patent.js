@@ -43,7 +43,7 @@ export default {
     async getById({ commit }, { id }) {
       commit(GET_PATENT_BY_ID_STARTED);
       try {
-        const patent = await httpClient.get(`http://localhost:3000/patents/${id}`);
+        const patent = await httpClient.get(`${process.env.VUE_APP_API_URL}/patents/${id}`);
 
         commit(GET_PATENT_BY_ID_COMPLETED, patent);
       } catch (e) {

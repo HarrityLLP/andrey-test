@@ -1,6 +1,6 @@
 FROM node:alpine
 
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /usr/src/api
 
 ARG NODE_ENV=production
 ENV NODE_ENV $NODE_ENV
@@ -9,7 +9,7 @@ ARG PORT=80
 ENV PORT $PORT
 EXPOSE $PORT 9229 9230
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/api
 
 COPY package.json package-lock.json* ./
 RUN npm install && npm cache clean --force
