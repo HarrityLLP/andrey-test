@@ -15,7 +15,7 @@
         <highlighted-text :text="item.summary" :keywords="keywords"></highlighted-text>
       </li>
     </ul>
-    <div v-else>
+    <div v-else-if="searchTerm && searchTerm.length">
       <i>Nothing matches a specified search criteria.</i>
     </div>
   </div>
@@ -62,7 +62,7 @@ export default {
       });
     },
     async initialize() {
-      if (!this.keywords) {
+      if (!this.keywords || !this.keywords.length) {
         return;
       }
 
