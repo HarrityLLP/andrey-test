@@ -44,16 +44,10 @@ export default {
 
       for (let i = 0; i < this.keywords.length; i++) {
         const keyword = this.keywords[i];
-        const index = result.toLowerCase().search(new RegExp('\\b' + keyword.toLowerCase() + '\\b'));
-        if (index === -1) {
-          continue;
-        }
-        result =
-          result.substr(0, index) +
-          `<mark class="marked" style="background-color: ${colors[i % 10]}">` +
-          result.substr(index, keyword.length) +
-          '</mark>' +
-          result.substr(index + keyword.length, result.length);
+
+        result = result.replace(new RegExp('\\b' + keyword.toLowerCase() + '\\b', 'g'), match => {
+          return `<mark class="marked" style="background-color: ${colors[i % 10]}">` + match + '</mark>';
+        });
       }
       return result;
     }
