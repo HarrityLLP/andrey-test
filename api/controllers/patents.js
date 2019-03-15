@@ -22,9 +22,17 @@ router.get(
 
     return ok(
       collection.map(obj => {
-        const entry = entries.find(s => obj.text.search(new RegExp('\\b' + s + '\\b') > -1));
+        let entry;
 
-        const [left = '', ...parts] = obj.text.split(new RegExp('\\b' + entry + '\\b'));
+        for (const item of entries) {
+          const result = obj.text.match(new RegExp('\\b' + item + '\\b', 'gi'));
+          if (result && result.length) {
+            entry = result[0];
+            break;
+          }
+        }
+
+        const [left = '', ...parts] = obj.text.split(new RegExp('\\b' + entry + '\\b', 'gi'));
         const right = parts && parts.length ? parts.join(entry) : '';
 
         return {

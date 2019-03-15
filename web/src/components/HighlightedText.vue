@@ -45,7 +45,7 @@ export default {
       for (let i = 0; i < this.keywords.length; i++) {
         const keyword = this.keywords[i];
 
-        result = result.replace(new RegExp('\\b' + keyword.toLowerCase() + '\\b', 'g'), match => {
+        result = result.replace(new RegExp('\\b' + keyword + '\\b', 'gi'), (match, ...args) => {
           return `<mark class="marked" style="background-color: ${colors[i % 10]}">` + match + '</mark>';
         });
       }
