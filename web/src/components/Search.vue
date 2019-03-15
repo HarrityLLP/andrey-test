@@ -12,7 +12,11 @@
         <router-link :to="{ path: `/patents/${item.id}`, query: $route.query }">{{ item.title }}</router-link>
 
         <img :src="item.logo" alt="" />
-        <highlighted-text :text="item.summary" :keywords="keywords"></highlighted-text>
+        <highlighted-text
+          :text="item.summary"
+          :keywords="keywords"
+          class="search-result-list-item-summary"
+        ></highlighted-text>
       </li>
     </ul>
     <div v-else-if="searchTerm && searchTerm.length">
@@ -121,6 +125,10 @@ form {
     max-width: 100px;
     max-height: 100px;
     justify-self: center;
+  }
+
+  .search-result-list-item-summary {
+    white-space: pre-wrap;
   }
 }
 </style>
